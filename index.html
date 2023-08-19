@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Ici c'est la partie HEAD -> contient les infos de la page -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Formulaire Bridge</title>
+</head>
+
+<!-- Ici c'est le contenu de la page-->
+<body>
+  <form id="bridge-form">
+    <table> <!-- Debut du tableau -->
+      <thead>
+        <tr>
+          <th>Donne</th>
+          <th>Paire <br>N/S</th>
+          <th>Paire <br>E/O</th>
+          <th>Plis</th>
+          <th>♣</th>
+          <th>**</th>
+          <th>Par</th> <!-- Nouvelle colonne "Par" -->
+          <th>R</th>
+          <th>Score <br>N/S</th>
+          <th>Score <br>E/O</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="number" name="numeroDonne" min="1" max="99" required style="width: 50%;"></td>
+          <td><input type="number" name="paireNS" min="1" max="99" required style="width: 50%;"></td>
+          <td><input type="number" name="paireEO" min="1" max="99" required style="width: 50%;"></td>
+          <td>
+            <input type="number" name="nbPli" min="1" max="7" required style="width: 50%;">
+          </td>
+          <td>
+            <select name="couleur" required>
+              <option value="♣">♣</option>
+              <option value="♦">♦</option>
+              <option value="♥">♥</option>
+              <option value="♠">♠</option>
+              <option value="SA">SA</option>
+            </select>
+          </td>
+          <td>
+            <select name="contre" required>
+              <option value="_"> </option>
+              <option value="*">*</option>
+              <option value="**">**</option>
+            </select>
+          </td>
+          <td>
+            <select name="jouePar" required> <!-- Nouveau select pour la colonne "Par" -->
+              <option value="N">N</option>
+              <option value="S">S</option>
+              <option value="E">E</option>
+              <option value="O">O</option>
+            </select>
+          </td>
+          <td><input type="number" name="resultat" min="-7" max="7" required style="width: 50%;"></td>
+          <td><input type="number" name="scoreNS" min="0" max="9999" required style="width: 50%;"></td>
+          <td><input type="number" name="scoreEO" min="0" max="9999" required style="width: 50%;"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" id="send-button">Envoyer</button>
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>
